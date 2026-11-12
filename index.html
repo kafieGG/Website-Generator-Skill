@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title> Generator Skill </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="kotak-mesin">
+            <h1> Generator Skill Unik</h1>
+
+            <p> 
+                Masukkan nama untuk 
+                melihat skill tersembunyimu
+            </p>
+            
+            <input
+            type="text"
+            id="namaInput"
+            placeholder="Ketik namamu..."
+            >
+            <button onclick="cekSkill()">
+                Cek Sekarang!
+            </button>
+
+            <h2 id="hasilSkill">
+                Skill belum terdeteksi...
+            </h2>
+            <img
+                id="fotoSkill"
+                src="https://placehold.co/200x200?text=?"
+                width="400"
+                >
+        </div>
+        <script>
+            function cekSkill () {
+                let nama = document.getElementById("namaInput").value;
+                let daftarSkill = [ 
+                    "Berubah menjadi tuyul",
+                    "Bahagia seumur hidup",
+                    "tidur sambil berdiri",
+                    "Bisa bahasa alien",
+                ];
+                let daftarGambar = [
+                    "https://i.pinimg.com/1200x/bc/56/f0/bc56f073d60a9e1f25b352d56c8398f9.jpg",
+                    "https://i.pinimg.com/736x/ca/43/9e/ca439e27c85913d04f7b736f08396692.jpg",
+                    "https://i.pinimg.com/736x/42/dd/60/42dd609ae07af027f3cb55227ccdba9a.jpg",
+                    "https://i.pinimg.com/736x/c7/6a/aa/c76aaa389cca7a16003b0a60c29c4aa1.jpg",
+                ]
+                let acak = Math.floor(Math.random() * daftarSkill.length);
+                let skillPilihan = daftarSkill[acak];
+                let gambarPilihan = daftarGambar[acak]
+                document.getElementById("hasilSkill").innerText = nama + ", skill unikmu adalah: " + skillPilihan;
+                document.getElementById("fotoSkill").src = gambarPilihan;
+            }
+        </script>
+    </body>
+</html>
